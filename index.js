@@ -1,6 +1,8 @@
-var repl = require('repl');
+'use strict';
 
-var r = repl.start({
+const repl = require('repl');
+
+const r = repl.start({
   prompt: "> ",
   useGlobal: true,
 });
@@ -11,3 +13,5 @@ r.context.c = function() {
     global["_" + i] = arguments[i];
   }
 };
+
+module.exports = r;
